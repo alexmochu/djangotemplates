@@ -1,6 +1,8 @@
 <!-- djangotemplates/example/templates/data.html -->
 
 {% extends 'base.html' %}
+{% load humanize %} <!-- Add this-->
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -21,7 +23,7 @@
           {% for celebrity in data %}
             <tr>
               <td>{{ celebrity.name }}</td>
-              <td>{{ celebrity.worth }}</td>
+              <td>$ {{ celebrity.worth | intcomma }}</td>
             </tr>
           {% endfor %}
         </tbody>
